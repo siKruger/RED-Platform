@@ -25,7 +25,7 @@
             "waitForKeyword": "waitForKeyword/waitForKeyword.js",
 	        "waitForQR": "waitForQR/waitForQR.js",
             "grip": "grip/grip.js",
-			"languageRecognize": "languageRecognize/languageRecognize.js"
+			"waveDetection": "waveDetection/waveDetection.js"
         }
     },
     "dependencies": {

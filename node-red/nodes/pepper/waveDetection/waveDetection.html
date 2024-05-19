@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    RED.nodes.registerType("Wave Detection", {
+        category: "Pepper",
+        color: "#1edffc",
+        defaults: {
+            timeout: {
+                value: null
+            },
+            outputs: {
+                value: 1
+            }
+        },
+        inputs: 1,
+        outputs: 1,
+        outputLabels: function (index) {
+            switch (index) {
+                case 0: return this._(this.type + ".waveDetectedOutput");
+                case 1: return this._(this.type + ".timeoutOutput");
+            }
+        },
+        icon: "font-awesome/fa-eye",
+        label: () => {
+            return this.name;
+        },
+        oneditsave: function () {
+            const node = this;
+
+            setTimeout(function () {
+                node.outputs = node.timeout !== null && node.timeout > 0 ? 2 : 1;
+            }, 0);
+        },
+
+    });
+</script>
+
+<script type="text/html" data-template-name="Wave Detection">
+    <div class="form-row">
+        <label for="node-input-timeout" style="overflow-wrap: break-word;"><i class="fa fa-clock-o"></i> <span data-i18n="Wave Detection.timeout"></label>
+        <input type="number" id="node-input-timeout" min="0" data-i18n="[placeholder]Wave Detection.inputHint">    
+    </div>
+</script>
+
+<script type="text/html" data-template-text="Wave Detection"></script>

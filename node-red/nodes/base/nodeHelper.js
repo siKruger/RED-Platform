@@ -87,6 +87,10 @@ class NodeHelper {
             startStopLut[startId].recursion = true;
             return;
         }
+        
+        if (nodesLut[nodeId].wires === undefined) {
+            return;
+        }
 
         nodesLut[nodeId].wires.forEach(outputs => {
             outputs.forEach(wire => {

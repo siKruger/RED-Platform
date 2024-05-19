@@ -1,0 +1,18 @@
+<script type="text/markdown" data-help-name="Wave Detection">
+Waits until the robot has detected the waving motion of a person.
+
+### Outputs
+1. Waving motion detected
+: payload ( ) : No additional data
+2. Timeout 
+:payload (string) : Text "timeout"
+
+### Settings
+: Timeout (number) : Time in seconds after which the timeout (2nd output) is triggered, if no waving motion has been detected before that.
+
+### Details
+The robot first moves its head to a neutral starting position (looks straight ahead).
+Afterwards it then starts the waving motion detection process.
+
+**Important:** Poor lighting conditions impair recognition accuracy.
+</script>

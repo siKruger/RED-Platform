@@ -1,0 +1,18 @@
+<script type="text/markdown" data-help-name="Wave Detection">
+Wartet bis der Roboter eine Winkbewegung von einer Person gefunden hat.
+
+### Ausgänge
+1. Winkbewegung erkannt 
+: payload ( ) : Keine zusätzlichen Daten
+2. Zeitüberschreitung 
+:payload (string) : Text "timeout" 
+
+### Einstellungen
+: Zeitüberschreitung (number) : Zeit in Sekunden, nach der die Zeitüberschreitung (2. Ausgang) ausgelöst wird, sofern vorher keine Winkbewegung erkannt wurde.
+
+### Details
+Der Roboter bewegt seinen Kopf zuerst in eine neutrale Ausgangsposition (schaut gerade nach vorn).
+Anschließend wird die Winkbewegungserkennung gestartet.
+
+**Wichtig:** Schlechte Lichtverhältnisse beeinträchtigen die Erkennungsgenauigkeit.
+</script>
