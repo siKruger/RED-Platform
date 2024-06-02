@@ -1,7 +1,7 @@
 {
     "Wave Detection": {
         "connectionError": "Connection error",
-        "faceDetectedOutput": "Waving motion detected",
+        "waveDetectedOutput": "Waving motion detected",
         "inputHint": "in seconds (0 = never)",
         "timeout": "Timeout",
         "timeoutOutput": "Timeout",

@@ -8,6 +8,7 @@ from ..server import app
 from ..decorator import log
 from ..config import SUBSCRIBED_SERVICES, EASTER_EGGS
 from ..endpoints.robot.face_detection import on_face_detected
+from ..endpoints.robot.GroupC_WavingDetection import on_wave_detected
 from ..endpoints.robot.qr import on_qr_code_deteced
 from ..endpoints.robot.speech_recognition import on_word_recognized
 from ..endpoints.robot.tts import say
@@ -25,13 +26,15 @@ def pepper_event():
     data = request.json["data"]
 
     if event == "FaceDetected":
-        on_face_detected(data)
+        on_face_detected(event, data)
+    elif event == "WavingDetection/Waving":
+        on_wave_detected(event, data)
     elif event == "BarcodeReader/BarcodeDetected":
-        on_qr_code_deteced(data)
+        on_qr_code_deteced(event, data)
     elif event == "BatteryChargeChanged":
         emit("/update/BatteryChargeChanged", data[0], broadcast=True, namespace="/")
     elif event == "WordRecognized":
-        on_word_recognized(data)
+        on_word_recognized(event, data)
     elif event == "TouchChanged":
         head_touched = False
 

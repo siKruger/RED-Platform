@@ -28,7 +28,7 @@ def start_wave_detection():
         if pepper_event_publisher:
             pepper_event_publisher.subscribe(wave_detected_subscriber)
         else:
-            logger.warning("Can't subscribe to face detection event. Subscriber is not intialized.")
+            logger.warning("Can't subscribe to wave detection event. Subscriber is not intialized.")
 
         return Response(status=200)
     except Exception as e:
@@ -60,7 +60,7 @@ def on_wave_detected(event, value):
 
     stop_wave_detection()
 
-    socketio_wrapper("/event/face/detected")
+    socketio_wrapper("/event/waving/detected")
 
 
 wave_detected_subscriber = Subscriber(PepperEvents.WAVE_DETECTED.value, on_wave_detected)
